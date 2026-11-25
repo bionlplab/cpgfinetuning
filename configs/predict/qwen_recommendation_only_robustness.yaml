@@ -1,0 +1,17 @@
+model_name_or_path: Qwen/Qwen3-VL-8B-Instruct
+trust_remote_code: true
+adapter_name_or_path: saves/qwen_recommendation_only
+stage: sft
+do_predict: true
+predict_with_generate: true
+freeze_vision_tower: true
+dataset_dir: data
+eval_dataset: robustness_recommendation_only
+template: qwen3_vl_nothink
+cutoff_len: 6144
+max_new_tokens: 1024
+per_device_eval_batch_size: 2
+do_sample: false
+bf16: true
+output_dir: outputs/qwen_recommendation_only/robustness
+report_to: none
